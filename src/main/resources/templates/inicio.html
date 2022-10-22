@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head th:replace = "layout/fragmentos :: cabecera"> </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav th:replace = "layout/fragmentos :: barra"> </nav>
+            <section>
+                <div>
+                    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                <img th:src="@{assets/doctorPaciente.jpg}">
+                                <div class="container">
+                                    <div class="carousel-caption text-start">
+                                    <h1>Examen médico <span class="texto">Revalidaciones</span></h1>
+                                    <p>Obtén tu brevete. Realiza tu examen médico con nosotros de forma rápida y segura.</p>
+                                    <p th:replace = "layout/fragmentos :: agendar"> </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                <img th:src="@{assets/doctorReloj.jpg}">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                    <h1>Examen médico <span class="texto">Recategorizar</span></h1>
+                                    <p>Ahora es fácil cuando se quiere obtener un brevete profesional de las categorías Alla, Allb, Allla, Alllb o Alllc</p>
+                                    <p th:replace = "layout/fragmentos :: agendar"> </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                <img th:src="@{assets/doctorApuntes.jpg}">
+                                <div class="container">
+                                    <div class="carousel-caption text-end">
+                                    <h1>Examen médico <span class="texto">Moto</span></h1>
+                                    <p>Realiza tu examen médico para obtener tu Licencia para Moto y Mototaxis.</p>
+                                    <p th:replace = "layout/fragmentos :: agendar"> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Features section-->
+            <section id="features">
+                <div class="container px-5 my-2">
+                    <div class="text-center mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Nuestro Servicios</h2>
+                        <p class="justificar text-center">Te guiamos desde el primer paso en este trámite con el apoyo de los mejores profesionales de la salud y profesores especializados en el rubro con las normativas vigentes de tránsito para una impecable capacitación.</p>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="row gx-5">
+                            <div class="col-lg-4 mb-5">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                            <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Lincencia Nueva</h5></p>
+                                        </div>
+                                        <p class="card-text mb-0 justificar">Examen Médico | DNI vigente original con dirección en Lima Metropolitana | Pago por derecho de examen de reglas y de manejo al banco Scotiabank S/. 59.80.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-5">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                            <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Revalidación</h5></p>
+                                        </div>
+                                        <p class="card-text mb-0 justificar">Examen médico | DNI vigente original con dirección en Lima Metropolitana | Pago por licencia física S/ 14.80 en el Banco de la Nación, licencia Electrónica S/ 6.80</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-5">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                            <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Recategorización</h5></p>
+                                        </div>    
+                                        <p class="card-text mb-0 justificar">Examen médico | Examen de conocimientos | Pago por licencia física S/ 14.80 en el Banco de la Nación, licencia Electrónica S/ 6.80 | DNI original y copia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="py-5 azul">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <h2 class="fw-bolder text-white">Examen Médico para Licencia de Conducir</h2>
+                                <div class="fs-4 mb-4 fst-italic text-white">Uno de los requisitos solicitados por el MTC para la emisión de una Nueva Licencia o para la Revalidación y Recategorización de esta; es que la persona presente un Examen Médico para Licencia de Conducir.</div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog preview section-->
+            <section class="py-5">
+                <div class="container px-5 my-2">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">EXAMEN MÉDICO PARA BREVETES</h5></p>
+                                    </div>
+                                    <p class="card-text mb-0 justificar">Ahora puedes obtener tu primera licencia de conducir de manera online. Si bien los exámenes siguen siendo de manera presencial, el uso de las plataformas online te permite evitar colas y ahorrar mucho tiempo. A continuación, te enseñamos cómo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">REVALIDACIÓN DE BREVETES</h5></p>
+                                    </div>
+                                    <p class="card-text mb-0 justificar">Olvídate de las colas en Diagnóstico & Salud Perú, ahora puedes realizar la revalidación de brevete de manera seguro y online con nuestros profesionales de la salud que te atenderán gustosamente. Sólo debes seguir estos 3 simples pasos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">RECATEGORIZACIÓN DE BREVETE</h5></p>
+                                    </div>
+                                    <p class="card-text mb-0 justificar">Aprobar el Examen Médico, realizar el pago del examen de reglas de tránsito, el examen de manejo, emisión de Licencia y programar tu cita para el examen de reglas de tránsito. Programar tu cita para el examen de manejo y rendir el examen de manejo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="py-5 azul">
+                <div class="container px-5 my-2">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-12">
+                            <div class="text-center">
+                                <div class="row gx-5">
+                                    <div class="col-lg-4 mb-5">
+                                        <div class="card h-100 shadow border-0">
+                                            <div class="card-body p-4">
+                                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-calendar3"></i></div>
+                                                <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Horarios de atención</h5></p>
+                                                <p class="card-text mb-0">Lunes a Viernes 9am-6pm.</p>
+                                                <p class="card-text mb-0">Sábados: 9am-5pm.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 mb-5">
+                                        <div class="card h-100 shadow border-0">
+                                            <div class="card-body p-4">
+                                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-phone"></i></div>
+                                                <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Contáctenos</h5></p>
+                                                <p class="card-text mb-0">contactenos@diagnostico</p>
+                                                <p class="card-text mb-0">ysalud.com.pe</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 mb-5">
+                                        <div class="card h-100 shadow border-0">
+                                            <div class="card-body p-4">
+                                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-geo-alt"></i></div>
+                                                <p class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Encuentranos</h5></p>
+                                                <p class="card-text mb-0">Av. Angamos Este Nro. 260 Int. 210. (Piso 2) - Miraflores</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace = "layout/fragmentos :: piepagina"> </footer>
+        <div th:replace = "layout/fragmentos :: librerias"> </div>
+    </body>
+</html>
