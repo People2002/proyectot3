@@ -33,17 +33,19 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" th:href="@{/examen/}">Examen Médico Brevete</a></li>
-                                    <li><a class="dropdown-item" th:href="@{/rayosx/}">Rayos X</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/servicios/examenMedico}">Examen Médico Brevete</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/servicios/rayosx}">Rayos X</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" th:href="@{/login/}">Cuenta/Crear</a></li>
+                            <li class="nav-item"><a class="nav-link" th:href="@{/login/}">Login</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
             
-            <p th:fragment = "agendar"><a class="btn btn-lg btn-primary" th:href = "@{/agendar/}">Agendar cita</a></p>
+            <p th:fragment = "agendar"><a class="btn btn-lg btn-primary" th:href = "@{/servicios/rayosx/agendar}">Agendar cita</a></p>
+
+            <p th:fragment = "agendar2"><a class="btn btn-lg btn-primary" th:href = "@{/servicios/examenMedico/agendar}">Agendar cita</a></p>
               
             <div class="col-lg-4 mb-5" th:fragment = 'atencion'>
                 <div class="card h-100 shadow border-0">
