@@ -5,10 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/serviciosdash")
-public class SedeController {
+public class ServiciosDashController {
     
+    @RequestMapping("/adomicilio")
+    public String domicilio(){
+        return "serviciosdash/adomicilio";
+    }
+
     @RequestMapping("/sede")
-    public String inicio(){
+    public String sede(){
         return "serviciosdash/sede";
     }
 }
