@@ -10,7 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "categoria_servicio")
+@Table(name = "categoria_servicio") 
+/*CAMBIE DE NOMBRE LA TABLA Y SUS ATRIBUTOS. NO DEJABA COMPILAR :'V' */
 public class CategoriaServ implements Serializable{
     //categoriaServ_id,categoriaServ_nombre,categoriaServ_costo
     @Id
