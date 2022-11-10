@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:replace="layout/fragmentDashServ :: cabecera">
+    
+</head>
+
+<body class="fixed-navbar">
+    <div class="page-wrapper">
+        <!-- START HEADER-->
+        <header th:replace="layout/fragmentDashServ :: barrasuperior">
+        </header>
+        <!-- END HEADER-->
+
+        <!-- START SIDEBAR-->
+        <nav th:replace="layout/fragmentDashServ :: barramenu">
+        </nav>
+        <!-- END SIDEBAR-->
+
+        <div class="content-wrapper">
+
+    <!--AQUI VA EL CONTENIDO DE LA PAGINA--->
+    <main>
+        <div class="container px-4">
+            <div class="card mt-3">
+                <div class="card-header adminca-banner text-white">Clientes:</div>
+                <div class="card-body">
+                    <form th:action = "@{/categoriaServicio/registro}" th:object="${categoriaServ}" method = "post">
+                        <input type="hidden" th:field="*{id}"/>
+                        <div class = "row">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre categoria:</label>
+                                <input th:field="*{nombre}" placeholder="Ingrese nombre" class="form-control" type = "text"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Costo de la categoria:</label>
+                                <input th:field="*{costo}" placeholder="Ingrese costo" class="form-control" type = "text"/>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa-solid fa-floppy-disk"></i> Guardar categoria para el servicio
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class = "card mt-4">
+                <div class="card-header adminca-banner text-white">Lista de categorias de servicios:</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <th>Nombre</th>
+                                <th>Costo</th>
+                            </thead>
+                            <tbody>
+                                <tr th:each="item: ${listaCategoriasServ}">
+                                    <td th:text="${item.nombre}"></td>
+                                    <td th:text="${item.costo}"></td>
+                                    <td class="text-center">
+                                        <a th:href="@{/categoriaServicio/editar/}+ ${item.id}" class="btn btn-warning">
+                                            <i class="fa-solid fa-pen-to-square"></i> Editar
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a th:href="@{/categoriaServicio/eliminar/}+ ${item.id}" class="btn btn-danger"
+                                        onclick="return confirm('¿Desea eliminar la categoria de servicio?')">
+                                            <i class="fa-solid fa-trash"></i> Eliminar
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BEGIN PAGA BACKDROPS-->
+    <div class="sidenav-backdrop backdrop"></div>
+    <div class="preloader-backdrop">
+    <div class="page-preloader">Loading</div>
+       
+    <!-- END PAGA BACKDROPS-->
+    <!-- CORE PLUGINS-->
+    <div th:replace="layout/fragmentDashServ :: librerias">
+    </div>
+</body>
+
+</html>
