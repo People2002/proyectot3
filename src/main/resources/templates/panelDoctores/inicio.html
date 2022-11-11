@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:replace="layout/fragmentDashServ :: cabecera">
+    
+</head>
+
+<body class="fixed-navbar">
+    <div class="page-wrapper">
+        <!-- START HEADER-->
+        <header th:replace="layout/fragmentDashServ :: barrasuperior">
+        </header>
+        <!-- END HEADER-->
+
+        <!-- START SIDEBAR-->
+        <nav th:replace="layout/fragmentDashServ :: barramenu">
+        </nav>
+        <!-- END SIDEBAR-->
+
+        <div class="content-wrapper">
+
+    <!--AQUI VA EL CONTENIDO DE LA PAGINA--->
+        <main>
+            <div class="container px-4">
+                
+                <div class=" alert alert-warning alert-dismissible fade show" role="alert" th:if="${mensaje != null}">
+                    <span th:text="${mensaje}" ></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        Doctores:
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/doctores/form}" th:object="${doctores}" method="post">
+                            
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Especialidades</label>
+                                        <select class="form-select" th:field="*{especialidad.id}">
+                                            <option value="">Seleccione una opción</option>
+                                            <option th:each="item: ${listaEspecilidades}" th:value="${item.id}" th:text="${item.nombre}"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mt-3">
+                                        <label>Nombre del doctor:</label>
+                                        <input type="text" th:field="*{nombre}" class="form-control"/>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label>Edad del Doctor</label>
+                                        <input type="text" th:field="*{edad}" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-12">
+                                        <div class="col-12 text-center">
+                                            <button type="submit" class="btn btn-info">
+                                                <i class="fa-solid fa-floppy-disk"></i> Guardar Datos
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+            </div>
+        </main>
+
+
+      <!-- BEGIN PAGA BACKDROPS-->
+      <div class="sidenav-backdrop backdrop"></div>
+      <div class="preloader-backdrop">
+      <div class="page-preloader">Loading</div>
+         
+      <!-- END PAGA BACKDROPS-->
+      <!-- CORE PLUGINS-->
+      <div th:replace="layout/fragmentDashServ :: librerias">
+      </div>
+  </body>
+  
+  </html>

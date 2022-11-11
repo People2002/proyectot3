@@ -21,7 +21,8 @@ public class EspecialidadServiceImp implements IEspecialidadService{
 
     @Override
     public List<Especialidad> cargarEspecialidades() {
-        return (List<Especialidad>)especialidadDAO.findAll();
+        // return (List<Especialidad>)especialidadDAO.findAll();
+        return especialidadDAO.findAllByOrderByNombre();
     }
 
     @Override
