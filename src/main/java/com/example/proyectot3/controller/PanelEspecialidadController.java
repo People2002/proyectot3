@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.proyectot3.model.entidad.Especialidad;
 import com.example.proyectot3.model.servicio.IEspecialidadService;
@@ -26,8 +27,9 @@ public class PanelEspecialidadController {
     }
 
     @RequestMapping(value="/formulario", method = RequestMethod.POST)
-    public String guardar(Especialidad especialidad){
-        especialidadService.guardarEspecialidad(especialidad);
+    public String guardar(Especialidad especialidad, Model model, RedirectAttributes flash){
+        String rpta = especialidadService.guardarEspecialidad(especialidad);        
+        flash.addFlashAttribute("mensaje", rpta);
         return "redirect:/panel/especialidad/";
     }
 
@@ -40,8 +42,9 @@ public class PanelEspecialidadController {
     }
 
     @RequestMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable(value="id") Long id){
-        especialidadService.eliminarEspecialidad(id);
+    public String eliminar(@PathVariable(value="id") Long id, Model model, RedirectAttributes flash){
+        String rpta = especialidadService.eliminarEspecialidad(id);
+        flash.addFlashAttribute("mensaje", rpta);
         return "redirect:/panel/especialidad/";
     }
 }
