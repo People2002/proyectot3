@@ -15,8 +15,22 @@ public class EspecialidadServiceImp implements IEspecialidadService{
     private IEspecialidadDAO especialidadDAO;
 
     @Override
-    public void guardarEspecialidad(Especialidad especialidad) {
-        especialidadDAO.save(especialidad); 
+    public String guardarEspecialidad(Especialidad especialidad) {
+        String rpta = "";
+
+        try{
+            if(especialidad.getId() == null){                
+                rpta="Se guardo los datos de la especialidad correctamente";
+            }else{
+                rpta="Se edito los datos de la especialidad correctamente";
+            }
+            especialidadDAO.save(especialidad);
+            
+
+        }catch(Exception e){
+            rpta=e.getMessage();
+        }
+        return rpta; 
     }
 
     @Override
@@ -31,8 +45,17 @@ public class EspecialidadServiceImp implements IEspecialidadService{
     }
 
     @Override
-    public void eliminarEspecialidad(Long id) {
-        especialidadDAO.deleteById(id);        
+    public String eliminarEspecialidad(Long id) {     
+        String rpta = "";
+
+        try{
+            especialidadDAO.deleteById(id);   
+            rpta="Se elimino los datos de la especialidad correctamente";
+
+        }catch(Exception e){
+            rpta=e.getMessage();
+        }
+        return rpta;    
     }
     
 }

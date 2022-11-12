@@ -21,6 +21,10 @@
 
     <!--AQUI VA EL CONTENIDO DE LA PAGINA--->
     <div class="container px-4">
+        <div class=" alert alert-warning alert-dismissible fade show" role="alert" th:if="${mensaje != null}">
+            <span th:text="${mensaje}" ></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         <div class="card mt-3">
             <div class="card-header adminca-banner text-white">
                 Especialidades
@@ -72,7 +76,7 @@
                                     <a th:href="@{/panel/especialidad/editar/}+ ${item.id}" class="btn btn-warning editarCategoria">Editar</a>
                                 </td>
                                 <td>
-                                    <a th:href="@{/panel/especialidad/eliminar/}+ ${item.id}" onclick="return confirm('Desea eliminar la categoria?') " class="btn btn-danger">Eliminar</a>
+                                    <a th:href="@{/panel/especialidad/eliminar/}+ ${item.id}" onclick="return confirm('Desea eliminar la especialidad?') " class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                         </tbody>
