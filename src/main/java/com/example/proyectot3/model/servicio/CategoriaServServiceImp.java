@@ -1,12 +1,12 @@
-package com.example.proyectot3.controller.model.servicio;
+package com.example.proyectot3.model.servicio;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.proyectot3.controller.model.dao.ICategoriaServDAO;
-import com.example.proyectot3.controller.model.entidad.CategoriaServ;
+import com.example.proyectot3.model.dao.ICategoriaServDAO;
+import com.example.proyectot3.model.entidad.CategoriaServ;
 
 @Service
 public class CategoriaServServiceImp implements ICategoriaServService{
