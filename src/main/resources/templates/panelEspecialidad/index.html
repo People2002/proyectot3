@@ -69,10 +69,14 @@
                                 <td th:text="${item.nombre}"></td>                                
                                 <td th:text="${item.descripcion}"></td>  
                                 <td>
-                                    <a th:href="@{/panel/especialidad/editar/}+ ${item.id}" class="btn btn-warning editarCategoria">Editar</a>
+                                    <a th:href="@{/panel/especialidad/editar/}+ ${item.id}" class="btn btn-warning">
+                                        <i class="fa-solid fa-pen-to-square"></i>Editar
+                                    </a>
                                 </td>
                                 <td>
-                                    <a th:href="@{/panel/especialidad/eliminar/}+ ${item.id}" onclick="return confirm('Desea eliminar la categoria?') " class="btn btn-danger">Eliminar</a>
+                                    <a th:href="@{/panel/especialidad/eliminar/}+ ${item.id}" onclick="return confirm('Desea eliminar la categoria?') " class="btn btn-danger">
+                                        <i class="fa-solid fa-trash"></i> Eliminar
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

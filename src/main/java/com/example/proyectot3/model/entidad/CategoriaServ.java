@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "categoria_servicio") 
+@Table(name = "categoriaserv") 
 /*CAMBIE DE NOMBRE LA TABLA Y SUS ATRIBUTOS. NO DEJABA COMPILAR :'V' */
 public class CategoriaServ implements Serializable{
     //categoriaServ_id,categoriaServ_nombre,categoriaServ_costo
@@ -22,8 +22,8 @@ public class CategoriaServ implements Serializable{
     @Column(name = "cat_serv_nombre")
     private String nombre;
 
-    @Column(name = "cat_serv_costo")
-    private Float costo;
+    @Column(name = "cat_serv_descripcion")
+    private String descripcion;
 
     public Long getId() {
         return id;
@@ -41,11 +41,14 @@ public class CategoriaServ implements Serializable{
         this.nombre = nombre;
     }
 
-    public Float getCosto() {
-        return costo;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setCosto(Float costo) {
-        this.costo = costo;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+
+
+
 }

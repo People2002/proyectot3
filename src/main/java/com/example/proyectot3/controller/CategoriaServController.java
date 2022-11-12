@@ -22,7 +22,7 @@ public class CategoriaServController {
         CategoriaServ categoriaServ = new CategoriaServ();
         model.addAttribute("categoriaServ", categoriaServ);
         model.addAttribute("listaCategoriasServ", categoriaServService.cargarCategoriaServ());
-        return "categoriaServicio/index";
+        return "panelcategoriaServicio/index";
     }
 
     @RequestMapping(value = "/registro",method = RequestMethod.POST)
@@ -36,7 +36,7 @@ public class CategoriaServController {
         CategoriaServ categoriaServ = categoriaServService.busCategoriaServ(id);
         model.addAttribute("categoriaServ", categoriaServ);
         model.addAttribute("listaCategoriaServ", categoriaServService.cargarCategoriaServ());
-        return "categoriaServicio/index";
+        return "panelcategoriaServicio/index";
     }
 
     @RequestMapping("eliminar/{id}")
