@@ -1,4 +1,4 @@
-package com.example.proyectot3.controller.model.entidad;
+package com.example.proyectot3.model.entidad;
 
 import java.io.Serializable;
 

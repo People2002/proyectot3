@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.proyectot3.controller.model.entidad.CategoriaServ;
-import com.example.proyectot3.controller.model.servicio.ICategoriaServService;
+import com.example.proyectot3.model.entidad.CategoriaServ;
+import com.example.proyectot3.model.servicio.ICategoriaServService;
 
 @Controller
 @RequestMapping("/categoriaServicio")
