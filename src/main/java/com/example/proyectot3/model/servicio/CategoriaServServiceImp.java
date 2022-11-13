@@ -15,8 +15,21 @@ public class CategoriaServServiceImp implements ICategoriaServService{
     private ICategoriaServDAO categoriaServDAO;
 
     @Override
-    public void guardarCategoriaServ(CategoriaServ categoriaServ) {
-        categoriaServDAO.save(categoriaServ);
+    public String guardarCategoriaServ(CategoriaServ categoriaServ) {
+        String rpta = "";
+        try{
+            if(categoriaServ.getId() == null){                
+                rpta="Se guardaron los datos correctamente";
+            }else{
+                rpta="Se editaron los datos correctamente";
+            }
+            categoriaServDAO.save(categoriaServ);
+            
+
+        }catch(Exception e){
+            rpta=e.getMessage();
+        }
+        return rpta; 
     }
 
     @Override
@@ -30,8 +43,15 @@ public class CategoriaServServiceImp implements ICategoriaServService{
     }
 
     @Override
-    public void eliminarCategoriaServ(Long id) {
-        categoriaServDAO.deleteById(id);  
+    public String eliminarCategoriaServ(Long id) {
+        String rpta = "";
+        try{
+            categoriaServDAO.deleteById(id);  
+            rpta="Se eliminaron los datos correctamente";
+        }catch(Exception e){
+            rpta = e.getMessage();
+        }
+        return rpta;
     }
 
 }
