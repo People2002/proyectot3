@@ -4906,12 +4906,11 @@ textarea.form-control-lg {
 }
 
 .alert {
-  position: relative;
-  padding: 1rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-}
+  -webkit-border-radius: 0px;
+  border-radius: 0px; }
+  .alert h4 {
+    margin-bottom: 8px; }
+
 
 .alert-heading {
   color: inherit;
@@ -4969,10 +4968,18 @@ textarea.form-control-lg {
 }
 
 .alert-warning {
-  color: #664d03;
-  background-color: #fff3cd;
-  border-color: #ffecb5;
-}
+  background-color: #f9ce89;
+  border-color: #f5b041;
+  color: #af700d; }
+  .alert-warning hr {
+    border-top-color: #f4a629; }
+  .alert-warning .alert-link {
+    color: #805209; }
+  .alert-warning.alert-bordered {
+    border-left: 4px solid #de8d0c; }
+  .alert-warning.alert-bordered-right {
+    border-right: 4px solid #de8d0c; }
+
 .alert-warning .alert-link {
   color: #523e02;
 }
@@ -11782,3 +11789,7 @@ ul.slider li img{
   -webkit-background-clip: text;
   color: transparent;  
 }
+
+/*--------------------------------------------------------------
+# BOTON "CERRAR" X
+--------------------------------------------------------------*/
