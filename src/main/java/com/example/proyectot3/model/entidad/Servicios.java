@@ -24,7 +24,7 @@ public class Servicios implements Serializable{
     private String nombre;
 
     @Column(name = "servicios_costo")
-    private String costo;
+    private Double costo;
 
     @ManyToOne
     @JoinColumn(name = "categoriaserv_cat_serv_id")
@@ -54,11 +54,11 @@ public class Servicios implements Serializable{
         this.categoriaServ = categoriaServ;
     }
 
-    public String getCosto() {
+    public Double getCosto() {
         return costo;
     }
 
-    public void setCosto(String costo) {
+    public void setCosto(Double costo) {
         this.costo = costo;
     }
 

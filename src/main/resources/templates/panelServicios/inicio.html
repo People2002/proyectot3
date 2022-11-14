@@ -30,14 +30,14 @@
 
                 <div class="card mt-3">
                     <div class="card-header adminca-banner text-white">
-                        Doctores:
+                        Servicios
                     </div>
                     <div class="card-body">
                         <form th:action="@{/servicios/form}" th:object="${servicios}" method="post">
                             
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Especialidades</label>
+                                        <label>Categoria de servicio</label>
                                         <select class="form-select" th:field="*{categoriaServ.id}" >
                                             <option value="">Seleccione una opción</option>
                                             <option th:each="item: ${listaCategoriasServ}" th:value="${item.id}" th:text="${item.nombre}"></option>

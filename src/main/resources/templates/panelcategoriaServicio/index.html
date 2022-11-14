@@ -28,7 +28,7 @@
             </div>
             <div class="card mt-3">
                 <div class="card-header adminca-banner text-white">
-                    Categorias de Servicios:
+                    Categorias de Servicios
                 </div>
                 <div class="card-body">
                     <form th:action = "@{/categoriaServicio/registro}" th:object="${categoriaServ}" method = "post">
@@ -62,8 +62,12 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>
-                                <th>Nombre</th>
-                                <th>Costo</th>
+                                <tr>
+                                    <th>Nombre</th>                                
+                                    <th>Descripcion</th>                                
+                                    <th></th>
+                                    <th></th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr th:each="item: ${listaCategoriasServ}">

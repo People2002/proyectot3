@@ -37,7 +37,7 @@ public class CategoriaServController {
     public String editar(@PathVariable(value = "id") Long id, Model model){
         CategoriaServ categoriaServ = categoriaServService.busCategoriaServ(id);
         model.addAttribute("categoriaServ", categoriaServ);
-        model.addAttribute("listaCategoriaServ", categoriaServService.cargarCategoriaServ());
+        model.addAttribute("listaCategoriasServ", categoriaServService.cargarCategoriaServ());
         return "panelcategoriaServicio/index";
     }
 
