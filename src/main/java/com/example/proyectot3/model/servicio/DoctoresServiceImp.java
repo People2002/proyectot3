@@ -1,5 +1,7 @@
 package com.example.proyectot3.model.servicio;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,4 +27,23 @@ public class DoctoresServiceImp implements IDoctoresService{
         }
         return rpta;
     }
+
+    @Override
+    public List<Doctores> cargarDoctores() {
+        return doctoresDAO.findAllByOrderByNombreAsc();
+    }
+
+    @Override
+    public String eliminarDoctor(Long id) {
+        String rpta="";
+        try{
+            doctoresDAO.deleteById(id);
+            rpta = "Se elimino el producto correctamente";
+        }catch(Exception e){
+            rpta = e.getMessage();
+        }
+        return rpta;
+    }
+
+    
 }

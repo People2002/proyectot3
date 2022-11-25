@@ -65,7 +65,92 @@
                                 </div>
                         </form>
                     </div>
-            </div>
+                 </div>
+
+                 <div class="card mt-5">
+                    <div class="card-header">
+                        Servicios Registrados
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Categoria del Servicio</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                    <th></th>
+                                    <tbody>
+                                        <tr th:each="item: ${listaServicios}">
+                                            <td th:text="${item.categoriaServ.nombre}"></td>
+                                            <td th:text="${item.nombre}"></td>
+                                            <td th:text="${item.costo}"></td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-warning editarServicio" 
+                                                th:data-id="${item.id}" 
+                                                th:data-especialidad="${item.categoriaServ.id}" 
+                                                th:data-nombre="${item.nombre}" 
+                                                th:data-costo="${item.costo}"> 
+                                                    <i class="fa-solid fa-pen-to-square"></i> Editar
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-danger" th:href="@{/servicios/eliminar/}+ ${item.id}"
+                                                onclick="return confirm('¿Desea eliminar el servicio?')">
+                                                    <i class="fa-solid fa-trash"></i> Eliminar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                      <!-- Modal -->
+                        <div class="modal fade" id="modalEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header adminca-banner-m text-white">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Servicio</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form method="post" th:action="@{/servicios/form}" th:object="${servicios}">
+                                    <input type="hidden" th:field="*{id}"/>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12 mb-3">
+                                                <label>Categoria del Servicio</label>
+                                                <select class="form-select" name="categoriaServ.id" id="cboCategoriaServicios" >
+                                                    <option value="">Seleccione una opción</option>
+                                                    <option th:each="item: ${listaCategoriasServ}" th:value="${item.id}" th:text="${item.nombre}"></option>
+                                                </select>
+                                            </div>     
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 mb-3">
+                                                <label>Nombre del Servicio:</label>
+                                        <input type="text" class="form-control" name="nombre" id="txtNombre"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 mb-3">
+                                                <label>Precio del Servicio:</label>
+                                        <input type="text" class="form-control" name="costo" id="txtCosto"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
         </main>
 
 
@@ -76,8 +161,10 @@
          
       <!-- END PAGA BACKDROPS-->
       <!-- CORE PLUGINS-->
-      <div th:replace="layout/fragmentDashServ :: librerias">
-      </div>
+     
+      <div th:replace="layout/fragmentDashServ :: librerias"></div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <script th:src="@{/js/servicios.js}" type="text/javascript" ></script>
   </body>
   
   </html>

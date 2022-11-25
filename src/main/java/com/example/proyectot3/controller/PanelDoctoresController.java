@@ -3,6 +3,7 @@ package com.example.proyectot3.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.proyectot3.model.entidad.Doctores;
@@ -27,12 +28,20 @@ public class PanelDoctoresController {
         Doctores doctores = new Doctores();
         model.addAttribute("doctores", doctores);
         model.addAttribute("listaEspecilidades", especialidadService.cargarEspecialidades());
+        model.addAttribute("listaDoctores", doctoresService.cargarDoctores());
         return "paneldoctores/inicio";
     }
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
     public String guardar(Doctores doctores, Model model, RedirectAttributes flash) {
         String rpta = doctoresService.guardarDoctores(doctores);
+        flash.addFlashAttribute("mensaje", rpta);
+        return "redirect:/doctores/";
+    }
+
+    @RequestMapping("/eliminar/{id}")
+    public String Eliminiar(@PathVariable(value = "id")Long id, Model model, RedirectAttributes flash){
+        String rpta= doctoresService.eliminarDoctor(id);
         flash.addFlashAttribute("mensaje", rpta);
         return "redirect:/doctores/";
     }
