@@ -52,6 +52,6 @@ public class SpringSecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() throws Exception{
-        return (web) -> web.ignoring().antMatchers("/css/**", "/js/**", "/assets/**", "/Dashboard/**", "/imag/**");
+        return (web) -> web.ignoring().antMatchers("/css/**", "/js/**", "/audio/**", "/assets/**", "/Dashboard/**", "/imag/**");
     }
 }
