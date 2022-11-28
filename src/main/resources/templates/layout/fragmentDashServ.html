@@ -101,7 +101,14 @@
         <div class="content-wrapper">
 
     <!--AQUI VA EL CONTENIDO DE LA PAGINA--->
-
+    <div class="container" th:fragment = "musica">
+        <div class="btn-float">
+            <audio controls autoplay muted>
+                <source th:src="@{/audio/musica.mp3}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
 
     <!-- BEGIN PAGA BACKDROPS-->
     <div class="sidenav-backdrop backdrop"></div>

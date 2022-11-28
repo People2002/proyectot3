@@ -11793,3 +11793,24 @@ ul.slider li img{
 /*--------------------------------------------------------------
 # BOTON "CERRAR" X
 --------------------------------------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.container .btn-float{
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 0px 0px;
+  color: white;
+  border-radius: 30px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  transition: all 0.3s ease 0s;
+  box-shadow: 1px 0.1px 0px rgba(255, 255, 255, 0.3);
+}
